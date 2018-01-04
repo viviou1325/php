@@ -11,20 +11,28 @@
 
     $data = array();
 
-    $current_page = $_GET['page'];
+    $current_page = $PAGES[$_GET['page']];
 
+    /*
     if (!in_array($current_page, $PAGES)) 
 	{
        	if ($current_page=='') 
-	{
+		{
            	 $current_page=$HOME_PAGE;
-        } 
+        }
+    }
+    /*
 	else 
-	{
+		{
             echo 'Erreur 404';
             //$current_page=$ERROR_404;
         }
-    }
+	*/
+
+    if(empty($_GET['page']))
+    	header('Location: ?page=accueil');
+
+
 
     require_once("application/modele/".$current_page.".inc.php");
 
