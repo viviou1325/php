@@ -10,15 +10,19 @@
 
 	<body>
 		<header>
-			{include './layout/layout_entete.inc.tpl'}
+			{include 'application/vue/layout/layout_entete.inc.tpl'}
 		</header>
 
 		<nav>
-			{include './nav/nav.inc.tpl'}
+			{include 'application/vue/nav/nav.inc.tpl'}
 		</nav>
 
+
+		{block name=body}{/block}
+
+
 		<footer>
-			{include './layout/layout_pied.inc.tpl'}
+			{include 'application/vue/layout/layout_pied.inc.tpl'}
 		</footer>
 
 	</body>
