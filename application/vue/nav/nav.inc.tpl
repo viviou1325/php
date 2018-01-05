@@ -1,4 +1,4 @@
 <nav>
-	<a href="?page=accueil">L'ACCUEIL DE SES MORTS</a>
-	<a href="?page=inscription">INSCRIPTIOOOOOOOOON</a>
+	<a href="?page=accueil">Accueil</a>
+	<a href="?page=inscription">Inscription</a>
 </nav>
