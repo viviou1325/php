@@ -42,6 +42,7 @@
     foreach ($data as $key => $value) {
         $smarty->assign($key, $value);
     }
+    $smarty->assign('data', $data);
     //$smarty->display("application/vue/".$current_page.".tpl");
     $smarty->display("application/vue/modules/".$current_page.".tpl");
 

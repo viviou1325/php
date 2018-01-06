@@ -1,6 +1,18 @@
 <?php
-	$plop=0;
-			if
+	$erreur_login=0;
+	$erreur_nom=0;
+	$erreur_prenom=0;
+	$erreur_mail=0;
+	$erreur_mdp=0;
+	$erreur_cmdp=0;
+
+	$data['err_log'] = $erreur_login;
+	$data['err_nom'] = $erreur_nom;
+	$data['err_prenom'] = $erreur_prenom;
+	$data['err_mail'] = $erreur_mail;
+	$data['err_mdp'] = $erreur_mdp;
+	$data['err_cmdp'] = $erreur_cmdp;
+			/*if
 			(
 				isset($_REQUEST['send']) && (!empty($_REQUEST['login'])) &&
 				(!empty($_REQUEST['last_name'])) &&
@@ -8,16 +20,34 @@
 				(!empty($_REQUEST['mail']) && filter_var($_REQUEST['mail'], FILTER_VALIDATE_EMAIL) ) &&
 				(!empty($_REQUEST['pwd'])) &&
 				($_REQUEST['cfpwd'] == $_REQUEST['pwd'])
-			)
+			)*/
+			if(isset($_REQUEST['send']) && (empty($_REQUEST['login'])))
 			{
-				$plop=0;
-				echo 'ploup';
+				$data['err_log']=1;
+			}
+			if(isset($_REQUEST['send']) && (empty($_REQUEST['nom'])))
+			{
+				$data['err_nom']=1;
+			}
+			if(isset($_REQUEST['send']) && (empty($_REQUEST['prenom'])))
+			{
+				$data['err_prenom']=1;
+			}
+			if(isset($_REQUEST['send']) && ((empty($_REQUEST['mail'])) || !filter_var($_REQUEST['mail'])))
+			{
+				$data['err_mail']=1;
+			}
+			if(isset($_REQUEST['send']) && (empty($_REQUEST['mdp'])))
+			{
+				$data['err_mdp']=1;
+			}
+			if($_REQUEST['cmdp'] != $_REQUEST['mdp'] || isset($_REQUEST['send']) && (empty($_REQUEST['mdp'])) )
+			{
+				$data['err_cmdp']=1;
 			}
 			else
 			{
-				$plop=1;
-
-				echo 'plop';
+				echo 'Ca marche';
 			}
 	//echo $_POST['login'];
 ?>
