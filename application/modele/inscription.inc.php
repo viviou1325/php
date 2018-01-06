@@ -1,6 +1,5 @@
 <?php
-
-	/*$plop = 0;
+	$plop=0;
 			if
 			(
 				isset($_REQUEST['send']) && (!empty($_REQUEST['login'])) &&
@@ -10,8 +9,15 @@
 				(!empty($_REQUEST['pwd'])) &&
 				($_REQUEST['cfpwd'] == $_REQUEST['pwd'])
 			)
-			{*/
-				//$plop=1;
-			//}
+			{
+				$plop=0;
+				echo 'ploup';
+			}
+			else
+			{
+				$plop=1;
 
+				echo 'plop';
+			}
+	//echo $_POST['login'];
 ?>

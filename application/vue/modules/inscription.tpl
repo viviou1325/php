@@ -2,10 +2,14 @@
 
 {block name="body"}
 
-<form action="application/modele/inscription.inc.php" method="post">
+<form action="" method="post">
+<!-- <form action="" method="post"> -->
 	<p>
 		login:
 		<input type="text" name="login" size="35" />
+		{if $plop == 1}
+			Erreur: login
+		{/if}
 	</p>
 
 	<p>
