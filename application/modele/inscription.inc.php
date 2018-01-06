@@ -1,4 +1,6 @@
 <?php
+
+include '../../configBDD.inc.php';
 	$erreur_login=0;
 	$erreur_nom=0;
 	$erreur_prenom=0;
@@ -45,9 +47,32 @@
 			{
 				$data['err_cmdp']=1;
 			}
-			else
+			
+			if(isset($_REQUEST['login']) && isset($_REQUEST['nom']) && isset($_REQUEST['prenom']) && isset($_REQUEST['mail']) && isset($_REQUEST['mdp']) && isset($_REQUEST['cmdp']))
 			{
 				echo 'Ca marche';
+				
+				//try
+				//{
+					$plop = $PDO_BDD->prepare('INSERT INTO T_UTILISATEUR_UTI(UTI_ID, UTI_LOGIN, UTI_MAIL, UTI_NOM, UTI_PRENOM, UTI_PASS, UTI_ADMIN, UTI_AVATAR)
+							VALUES(:id, :login, :mail, :nom, :prenom, :mdp, :admin, :avatar)');
+
+					$plop->execute(array(
+						'id' => 1,
+						'login'=> $_REQUEST['login'],
+						'mail'=> $_REQUEST['mail'],
+						'nom'=> $_REQUEST['nom'],
+						'prenom'=> $_REQUEST['prenom'],
+						'mdp'=> $_REQUEST['mdp'],
+						'admin' => 'DEFAULT',
+						'avatar' => 'DEFAULT'));
+				//}
+
+				//catch(Exception $e)
+				//{
+					//die('Erreur: '.$e->getMessage().'<br/>');
+				//}
+				
 			}
 	//echo $_POST['login'];
 ?>

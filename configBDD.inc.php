@@ -1,7 +1,7 @@
 <?php
 
 define('DB_HOST', 'mysql-flack.alwaysdata.net');
-define("DB_PORT", 3306);
+define('DB_PORT', 3306);
 define('DB_DATABASE', 'flack_php');
 define('DB_USERNAME', 'flack');
 define('DB_PASSWORD', 'Cookies');
