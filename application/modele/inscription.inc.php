@@ -50,29 +50,36 @@ include '../../configBDD.inc.php';
 			
 			if(isset($_REQUEST['login']) && isset($_REQUEST['nom']) && isset($_REQUEST['prenom']) && isset($_REQUEST['mail']) && isset($_REQUEST['mdp']) && isset($_REQUEST['cmdp']))
 			{
-				echo 'Ca marche';
-				
-				//try
-				//{
-					$plop = $PDO_BDD->prepare('INSERT INTO T_UTILISATEUR_UTI(UTI_ID, UTI_LOGIN, UTI_MAIL, UTI_NOM, UTI_PRENOM, UTI_PASS, UTI_ADMIN, UTI_AVATAR)
-							VALUES(:id, :login, :mail, :nom, :prenom, :mdp, :admin, :avatar)');
+				echo 'Debut';		
+				try
+				{
+					echo 'plop';
+
+					$plop = $PDO_BDD->prepare('INSERT INTO T_UTILISATEUR_UTI(UTI_LOGIN, UTI_MAIL, UTI_NOM, UTI_PRENOM, UTI_PASS, UTI_ADMIN, UTI_AVATAR)
+							VALUES(:uti_login, :uti_mail, :uti_nom, :uti_prenom, :uti_mdp, :uti_admin, :uti_avatar)');
+
+					echo 'plop2';
 
 					$plop->execute(array(
-						'id' => 1,
-						'login'=> $_REQUEST['login'],
-						'mail'=> $_REQUEST['mail'],
-						'nom'=> $_REQUEST['nom'],
-						'prenom'=> $_REQUEST['prenom'],
-						'mdp'=> $_REQUEST['mdp'],
-						'admin' => 'DEFAULT',
-						'avatar' => 'DEFAULT'));
-				//}
+						'uti_login' => $_REQUEST['login'],
+						'uti_mail' => $_REQUEST['mail'],
+						'uti_nom' => $_REQUEST['nom'],
+						'uti_prenom' => $_REQUEST['prenom'],
+						'uti_mdp' => $_REQUEST['mdp'],
+						'uti_admin' => 'DEFAULT',
+						'uti_avatar' => 'DEFAULT'));
 
-				//catch(Exception $e)
-				//{
-					//die('Erreur: '.$e->getMessage().'<br/>');
-				//}
-				
+					echo 'plop3';
+				}
+
+				//echo 'Milieu';
+
+				catch(Exception $e)
+				{
+					die('Erreur: '.$e->getMessage().'<br/>');
+				}
+
+				//echo 'Fin';
 			}
 	//echo $_POST['login'];
 ?>
