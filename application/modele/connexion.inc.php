@@ -7,43 +7,60 @@ $data['err_log_co'] = $erreur_login_co;
 $data['err_mdp_co'] = $erreur_mdp_co;
 
 
-try
-{
 
+<<<<<<< HEAD
 	$req_connect = $PDO_BDD->query('SELECT UTI_LOGIN, UTI_PASS
 														FROM T_UTILISATEUR_UTI
 														WHERE UTI_LOGIN = "'.$_POST['login_co'].'" and UTI_PASS = "'.$_POST['mdp_co'].'"');
 }
+=======
+>>>>>>> master
 
-catch(Exception $e)
+if(isset($_POST['send_co']))
 {
-	die('Erreur: '.$e->getMessage().'<br/>');
-}
+	try
+	{
 
-if(empty($req_connect))
-{
+		$req_connect = $PDO_BDD->query('SELECT UTI_LOGIN, UTI_PASS
+															FROM T_UTILISATEUR_UTI
+															WHERE UTI_LOGIN = "'.$_POST['login_co'].'" and UTI_PASS = "'.$_POST['mdp_co'].'"');
+	}
 
-	$req_log = $PDO_BDD->query('SELECT UTI_LOGIN FROM T_UTILISATEUR_UTI WHERE UTI_LOGIN ='.$_POST['login_co']);
-
-		if (empty($_POST['login_co']))
-		{
-			$data['err_log_co']=1;
-		}
-		else if(empty($req_log))
-		{
-			$data['err_log_co']=2;
-		}
+	catch(Exception $e)
+	{
+		die('Erreur: '.$e->getMessage().'<br/>');
+	}
 
 
+	echo "empty".empty($req_connect);
+	echo "!empty".!empty($req_connect);
 
-		if(empty($_POST['mdp_co']))
-		{
-			$data['err_mdp_co']=1;
-		}
-		else if(empty($req_connect) && !empty($req_log))
-		{
-			$data['err_mdp_co']=2;
-		}
+
+	if(empty($req_connect))
+	{
+
+		$req_log = $PDO_BDD->query('SELECT UTI_LOGIN FROM T_UTILISATEUR_UTI WHERE UTI_LOGIN ='.$_POST['login_co']);
+
+			if (empty($_POST['login_co']))
+			{
+				$data['err_log_co']=1;
+			}
+			else if(empty($req_log))
+			{
+				$data['err_log_co']=2;
+			}
+
+
+
+			if(empty($_POST['mdp_co']))
+			{
+				$data['err_mdp_co']=1;
+			}
+			else if(empty($req_connect) && !empty($req_log))
+			{
+				$data['err_mdp_co']=2;
+			}
+	}
 }
 
 ?>

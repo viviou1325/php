@@ -1,7 +1,6 @@
 {extends file='application/vue/layout.tpl'}
 
 {block name="body"}
-x
 
 	<form action="" method="post">
 		<p>
@@ -24,7 +23,7 @@ x
 			{/if}
 		</p>
 	
-		<input type="submit" name="send" value="Envoyer"/>
+		<input type="submit" name="send_co" value="Envoyer"/>
 	</form>
 		
 {/block}
