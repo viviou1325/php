@@ -12,7 +12,7 @@ try
 
 	$req_connect = $PDO_BDD->query('SELECT UTI_LOGIN, UTI_PASS
 														FROM T_UTILISATEUR_UTI
-														WHERE UTI_LOGIN = '.$_POST['login_co'].'andUTI_PASS = '.$_POST['mdp_co']);
+														WHERE UTI_LOGIN = '.$_POST['login_co'].'and UTI_PASS = '.$_POST['mdp_co']);
 }
 
 catch(Exception $e)
@@ -23,7 +23,7 @@ catch(Exception $e)
 if(empty($req_connect))
 {
 
-	$req_log = $PDO_BDD->query('SELECT UTI_LOGIN FROM T_UTILISATEUR_UTI WHERE UTI_LOGIN = login_co');
+	$req_log = $PDO_BDD->query('SELECT UTI_LOGIN FROM T_UTILISATEUR_UTI WHERE UTI_LOGIN ='.$_POST['login_co']);
 
 		if (empty($_POST['login_co']))
 		{
