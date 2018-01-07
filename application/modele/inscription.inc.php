@@ -1,6 +1,5 @@
 <?php
 
-include '../../configBDD.inc.php';
 	$erreur_login=0;
 	$erreur_nom=0;
 	$erreur_prenom=0;
@@ -48,38 +47,54 @@ include '../../configBDD.inc.php';
 				$data['err_cmdp']=1;
 			}
 			
-			if(isset($_REQUEST['login']) && isset($_REQUEST['nom']) && isset($_REQUEST['prenom']) && isset($_REQUEST['mail']) && isset($_REQUEST['mdp']) && isset($_REQUEST['cmdp']))
+			if(!empty($_REQUEST['login']) && !empty($_REQUEST['nom']) && !empty($_REQUEST['prenom']) && !empty($_REQUEST['mail']) && !empty($_REQUEST['mdp']) && !empty($_REQUEST['cmdp']))
 			{
-				echo 'Debut';		
+				
+				echo 'Debut';
+
+				/*
 				try
 				{
-					echo 'plop';
 
 					$plop = $PDO_BDD->prepare('INSERT INTO T_UTILISATEUR_UTI(UTI_LOGIN, UTI_MAIL, UTI_NOM, UTI_PRENOM, UTI_PASS, UTI_ADMIN, UTI_AVATAR)
 							VALUES(:uti_login, :uti_mail, :uti_nom, :uti_prenom, :uti_mdp, :uti_admin, :uti_avatar)');
 
-					echo 'plop2';
 
 					$plop->execute(array(
-						'uti_login' => $_REQUEST['login'],
-						'uti_mail' => $_REQUEST['mail'],
-						'uti_nom' => $_REQUEST['nom'],
-						'uti_prenom' => $_REQUEST['prenom'],
-						'uti_mdp' => $_REQUEST['mdp'],
-						'uti_admin' => 'DEFAULT',
-						'uti_avatar' => 'DEFAULT'));
-
-					echo 'plop3';
+						'uti_login' => $_POST['login'],
+						'uti_mail' => $_POST['mail'],
+						'uti_nom' => $_POST['nom'],
+						'uti_prenom' => $_POST['prenom'],
+						'uti_mdp' => $_POST['mdp'],
+						'uti_admin' => "DEFAULT",
+						'uti_avatar' => "DEFAULT"));
 				}
+				*/
 
-				//echo 'Milieu';
+				echo isset($PDO_BDD); // il trouve pas $PDO_BDD, ca veut dire qu'on a un probleme avec la liaison avec la bdd
 
+				//$pouet = $PDO_BDD->exec("INSERT INTO T_CATEGORIE_CAT VALUES('1', 'test', 'jesuisuntest', 'test.jpg'");
+
+				//echo $pouet;
+
+
+				/*
 				catch(Exception $e)
 				{
 					die('Erreur: '.$e->getMessage().'<br/>');
 				}
+				*/
+				//$defo = "DEFAULT";
 
-				//echo 'Fin';
+				/*$req = 'INSET INTO T_UTILISATEUR_UTI
+						(UTI_LOGIN, UTI_MAIL, UTI_NOM, UTI_PRENOM, UTI_PASS, UTI_ADMIN, UTI_AVATAR)
+						VALUES
+						("'.$_POST['login'].'","'.$_POST['mail'].'","'.$_POST['nom'].'","'.$_POST['prenom'].'","'.$_POST['mdp'].'","'.$defo.'","'.$defo.'");';
+
+				$resultat=mysql_query($req) or die('Erreur'.__LINE__.':'.mysql_error());
+				*/
+
+
+				echo 'Fin';
 			}
-	//echo $_POST['login'];
 ?>

@@ -6,7 +6,7 @@ define('DB_DATABASE', 'flack_php');
 define('DB_USERNAME', 'flack');
 define('DB_PASSWORD', 'Cookies');
 
-//$PDO_BDD  new PDO('mysql:host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_DATABASE, DB_USERNAME, DB_PASSWORD);
+//$PDO_BDD = new PDO('mysql:host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_DATABASE, DB_USERNAME, DB_PASSWORD);
 
 try
 {
