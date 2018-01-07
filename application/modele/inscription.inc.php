@@ -82,7 +82,7 @@
 					die('Erreur: '.$e->getMessage().'<br/>');
 				}
 
-				echo isset($PDO_BDD);
+				//echo isset($PDO_BDD);
 
 				//un commentaire en plus pour test
 				
