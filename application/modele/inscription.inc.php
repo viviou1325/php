@@ -83,6 +83,8 @@
 				}
 
 				echo isset($PDO_BDD);
+
+				//un commentaire en plus pour test
 				
 				//$defo = "DEFAULT";
 
