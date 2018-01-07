@@ -52,7 +52,7 @@
 				
 				echo 'Debut';
 
-				/*
+				
 				try
 				{
 
@@ -69,21 +69,21 @@
 						'uti_admin' => "DEFAULT",
 						'uti_avatar' => "DEFAULT"));
 				}
-				*/
-
-				echo isset($PDO_BDD); // il trouve pas $PDO_BDD, ca veut dire qu'on a un probleme avec la liaison avec la bdd
+				
 
 				//$pouet = $PDO_BDD->exec("INSERT INTO T_CATEGORIE_CAT VALUES('1', 'test', 'jesuisuntest', 'test.jpg'");
 
 				//echo $pouet;
 
 
-				/*
+				
 				catch(Exception $e)
 				{
 					die('Erreur: '.$e->getMessage().'<br/>');
 				}
-				*/
+
+				echo isset($PDO_BDD);
+				
 				//$defo = "DEFAULT";
 
 				/*$req = 'INSET INTO T_UTILISATEUR_UTI
