@@ -12,7 +12,7 @@ try
 
 	$req_connect = $PDO_BDD->query('SELECT UTI_LOGIN, UTI_PASS
 														FROM T_UTILISATEUR_UTI
-														WHERE UTI_LOGIN = '.$_POST['login_co'].'and UTI_PASS = '.$_POST['mdp_co']);
+														WHERE UTI_LOGIN = "'.$_POST['login_co'].'" and UTI_PASS = "'.$_POST['mdp_co']'"');
 }
 
 catch(Exception $e)
