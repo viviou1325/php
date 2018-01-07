@@ -25,8 +25,6 @@ if(isset($_POST['send_co']))
 	}
 
 
-	echo "empty".empty($req_connect);
-	echo "!empty".!empty($req_connect);
 
 
 	if(empty($req_connect))
@@ -37,10 +35,12 @@ if(isset($_POST['send_co']))
 			if (empty($_POST['login_co']))
 			{
 				$data['err_log_co']=1;
+				echo $data['err_log_co']=1;
 			}
 			else if(empty($req_log))
 			{
 				$data['err_log_co']=2;
+				echo $data['err_log_co']=2;
 			}
 
 
