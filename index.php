@@ -49,5 +49,6 @@
     $smarty->assign('PDO_BDD', $PDO_BDD);
     //$smarty->display("application/vue/".$current_page.".tpl");
     $smarty->display("application/vue/modules/".$current_page.".tpl");
+    print_r($req_connect);
 
 ?>
