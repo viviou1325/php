@@ -98,5 +98,8 @@
 
 
 				echo 'Fin';
+
+
+				header('Location: ?page=connexion');
 			}
 ?>
